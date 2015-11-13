@@ -1,6 +1,7 @@
 #include <cmath>
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib> 		//package for random number
+#include <ctime>		//package for time to create more random number;
 
 using namespace std;
 
@@ -21,12 +22,15 @@ int main()
    return 0;
 }
 
+//construction random number with pointer
 void randnr(double* p, int N)
 {
+	srand(time(NULL)); //create (really) random numbers
 	for(int i=0;i<N;i++)
 		p[i]=double(rand())/RAND_MAX;
 }
 
+//calculation mean value and variance with refernce, get data with pointer
 void calc(double& mean, double& var,double* p, int N)
 {
 	mean=0.0;
